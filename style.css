@@ -27,6 +27,8 @@ html, body {
   padding: 0;
   background: var(--bg);
   color: var(--fg);
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -72,11 +74,17 @@ header.site .wrap {
   display: inline-block;
 }
 
+nav.site {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 nav.site a {
   color: var(--muted);
   text-decoration: none;
   margin-left: 20px;
   font-size: 15px;
+  white-space: nowrap;
 }
 
 nav.site a:hover { color: var(--fg); }
@@ -163,6 +171,90 @@ li { margin-bottom: 6px; }
 .feature-grid .card { margin: 0; }
 .feature-grid h3 { margin-top: 0; }
 .feature-grid p { color: var(--muted); font-size: 15px; margin: 4px 0 0; }
+
+.hero {
+  text-align: center;
+  padding: 12px 0 8px;
+}
+
+.app-icon {
+  width: 112px;
+  height: 112px;
+  border-radius: 26px;
+  box-shadow: 0 12px 32px -12px rgba(255, 106, 61, 0.45);
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  margin-bottom: 10px;
+}
+
+.hero .subtitle {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero .badges {
+  justify-content: center;
+}
+
+.about {
+  max-width: 560px;
+  margin: 8px auto 8px;
+  text-align: center;
+}
+
+.about p {
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin: 48px 0 8px;
+}
+
+@media (max-width: 560px) {
+  .highlights { grid-template-columns: 1fr; }
+}
+
+.highlight {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.highlight > div {
+  min-width: 0;
+}
+
+.icon-dot {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.highlight h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+
+.highlight p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0;
+}
 
 footer.site {
   border-top: 1px solid var(--border);
